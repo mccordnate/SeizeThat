@@ -11,6 +11,12 @@
     <TextView
         android:text="Looks like you don't have any deals running :("
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/currentBusinessDealsListView" />
 
 </RelativeLayout>

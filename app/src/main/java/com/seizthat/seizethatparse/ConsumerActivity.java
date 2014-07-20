@@ -8,6 +8,7 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
 import com.parse.ParseUser;
 import com.seizthat.seizethatparse.R;
@@ -19,6 +20,12 @@ public class ConsumerActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_consumer);
         checkGPS();
+
+        ConsumerLocalDealAdapter adapter = new ConsumerLocalDealAdapter(this);
+        adapter.loadObjects();
+
+        ListView listView = (ListView) findViewById(R.id.dealLocalListView);
+        listView.setAdapter(adapter);
     }
 
     private void checkGPS() {
