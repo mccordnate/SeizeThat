@@ -20,5 +20,6 @@
 
     <string name="title_activity_deal">DealActivity</string>
     <string name="title_activity_deal_checker">DealCheckerActivity</string>
+    <string name="title_activity_deal_info">DealInfoActivity</string>
 
 </resources>

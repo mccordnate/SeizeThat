@@ -56,6 +56,8 @@ public class DealActivity extends Activity {
         deal.put("quantity", (int) Double.parseDouble(quantity.getText().toString()));
         deal.put("amountSeized", 0);
         deal.put("business", user);
+        deal.put("location", user.get("location"));
+        deal.put("businessName", user.getString("title"));
 
         deal.saveInBackground();
 

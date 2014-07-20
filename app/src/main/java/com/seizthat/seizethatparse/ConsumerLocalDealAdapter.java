@@ -32,7 +32,7 @@ public class ConsumerLocalDealAdapter extends ParseQueryAdapter<ParseObject> {
         super(context, new ParseQueryAdapter.QueryFactory<ParseObject>(){
             public ParseQuery create() {
                 ParseQuery query = ParseQuery.getQuery("Deal");
-                //query.whereNear("location", getGPS(context));
+                query.whereNear("location", getGPS(context));
                 try {
                     query.find();
                 } catch (ParseException e) {
@@ -56,10 +56,10 @@ public class ConsumerLocalDealAdapter extends ParseQueryAdapter<ParseObject> {
             dealTitle.setText(object.getString("title"));
 
             TextView dealBusiness = (TextView) v.findViewById(R.id.businessName);
-            dealBusiness.setText(((ParseUser) object.get("business")).toString());//.getString("title"));
+            dealBusiness.setText(object.getString("businessName"));
 
-            //TextView dealDistance = (TextView) v.findViewById(R.id.distance);
-            //dealDistance.setText(String.valueOf(((ParseGeoPoint)((ParseUser) object.get("business")).get("location")).distanceInMilesTo(currentUserLocation)));
+            TextView dealDistance = (TextView) v.findViewById(R.id.distance);
+            dealDistance.setText(String.valueOf(((ParseGeoPoint)object.get("location")).distanceInMilesTo(currentUserLocation)) + " mi");
 
             TextView available = (TextView) v.findViewById(R.id.available);
             int quantity = object.getInt("quantity");

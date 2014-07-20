@@ -36,6 +36,10 @@
             android:name=".DealCheckerActivity"
             android:label="@string/title_activity_deal_checker" >
         </activity>
+        <activity
+            android:name=".DealInfoActivity"
+            android:label="@string/title_activity_deal_info" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
