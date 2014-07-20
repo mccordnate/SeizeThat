@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.seizthat.seizethatparse.R;
@@ -56,16 +57,16 @@ public class BusinessProfileActivity extends Activity {
         EditText name = (EditText) findViewById(R.id.name);
         EditText description = (EditText) findViewById(R.id.description);
         Spinner category = (Spinner) findViewById(R.id.categories);
+        ParseGeoPoint point = new ParseGeoPoint(lat,lon);
 
-        ParseObject business = new ParseObject("Business");
-        business.put("name", name.getText().toString());
-        business.put("description", description.getText().toString());
-        business.put("category", category.getSelectedItem().toString());
-        business.put("owner", user);
-
+        //ParseObject business = new ParseObject("Business");
+        user.put("title", name.getText().toString());
+        user.put("description", description.getText().toString());
+        user.put("category", category.getSelectedItem().toString());
+        user.put("location", point);
         user.put("profile", true);
 
-        business.saveInBackground();
+        user.saveInBackground();
 
         startActivity(new Intent(this, BusinessActivity.class));
         finish();

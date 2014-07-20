@@ -24,6 +24,32 @@
             android:onClick="logout"/>
     </TableRow>
 
-</TableLayout>
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Deal"
+                android:id="@+id/createDeal"
+                android:layout_column="9"
+                android:onClick="createDeal" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Current Deals"
+                android:id="@+id/viewCurrentDealsButton"
+                android:layout_column="9"
+                android:onClick="viewCurrentDeals" />
+        </TableRow>
+
+    </TableLayout>
 
 </RelativeLayout>

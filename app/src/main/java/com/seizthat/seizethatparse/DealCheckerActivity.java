@@ -1,29 +1,24 @@
 package com.seizthat.seizethatparse;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-
-import com.parse.Parse;
-import com.parse.ParseUser;
 import com.seizthat.seizethatparse.R;
 
-public class BusinessActivity extends Activity {
+public class DealCheckerActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_business);
+        setContentView(R.layout.activity_deal_checker);
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.business, menu);
+        getMenuInflater().inflate(R.menu.deal_checker, menu);
         return true;
     }
 
@@ -37,21 +32,5 @@ public class BusinessActivity extends Activity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public void logout(View view){
-        ParseUser.logOut();
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-        finish();
-
-    }
-
-    public void createDeal(View view){
-        startActivity(new Intent(this, DealActivity.class));
-    }
-
-    public void viewCurrentDeals(View view){
-        startActivity(new Intent(this, DealCheckerActivity.class));
     }
 }

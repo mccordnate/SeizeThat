@@ -28,11 +28,19 @@
             android:name=".BusinessProfileActivity"
             android:label="@string/title_activity_business_profile" >
         </activity>
+        <activity
+            android:name=".DealActivity"
+            android:label="@string/title_activity_deal" >
+        </activity>
+        <activity
+            android:name=".DealCheckerActivity"
+            android:label="@string/title_activity_deal_checker" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>
